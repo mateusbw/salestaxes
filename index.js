@@ -6,9 +6,9 @@ window.addEventListener("load", function () {
         const productsWithTax = addTaxToProducts(products);
         let receiptContainer = document.getElementById("receipt");
         let content = productsWithTax.map(product => `<p>${product.quantity} ${product.name}: 
-        ${product.total.toFixed(2)}</p>`).join('');
+        ${product.total}</p>`).join('');
         content += `<p><strong>Sales Taxes: ${productsWithTax.reduce((totalTaxes, product) => totalTaxes += product.tax, 0).toFixed(2)}</strong></p>`
-        content += `<p><strong>Total: ${productsWithTax.reduce((total, product) => total += (product.total), 0).toFixed(2)}</strong></p>`
+        content += `<p><strong>Total: ${productsWithTax.reduce((total, product) => total += parseFloat(product.total), 0)}</strong></p>`
         receiptContainer.innerHTML = content;
     });
 });
