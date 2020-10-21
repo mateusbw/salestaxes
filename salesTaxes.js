@@ -28,6 +28,7 @@ const isExempt = ({ name }) => {
     const exemptProducts = [
         "packet of headache pills",
         "boxes of chocolates",
+        "box of chocolates",
         "chocolate bar",
         "book",
     ];
